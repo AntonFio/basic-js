@@ -14,22 +14,24 @@ const { NotImplementedError } = require('../extensions/index.js');
  function sortByHeight(arr) {
 	let arr2 = [];
 	for (let i = 0; i < arr.length; i++){
-		if (arr[i] < 0) {
-			arr2.push(NaN)
-		} else {
+		if (arr[i] > 0) {
 			arr2.push(arr[i])
 		}
 	}
-  let arrResult = arr2.sort((a, b) => a - b)
-	let result = [];
-	for (let i = 0; i < arrResult.length; i++){
-		if (arrResult[i] === NaN) {
-			result.push(-1)
+	let arrQ = arr2.sort((a, b) => (a) - (b))
+	console.log(arrQ)
+	
+	let arrNan = []
+	let next = 0
+	for (let i = 0; i < arr.length; i++){
+		if (arr[i] < 0) {
+			arrNan.push(arr[i])
 		} else {
-			result.push(arr[i])
+			arrNan.push(arrQ[next])
+			next++
 		}
 	}
-	return result
+	return arrNan
 }
 
 module.exports = {
