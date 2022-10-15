@@ -13,25 +13,28 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 
  function getSeason(data) {
-// 	if (typeof data === 'string') return 'Invalid date!';
-// 	if (typeof data === Array.isArray(data)) return 'Invalid date!';
-// 	if (typeof data === 'function') return 'Invalid date!';
-// 	if (data === undefined) return 'Unable to determine the time of year!';
+	if (typeof data === 'string') return 'Invalid date!';
+	if (typeof data === 'number') return 'Invalid date!';
+	if (Array.isArray(data) == 'object') return 'Invalid date!';
+	if (typeof data === Array.isArray(data)) return 'Invalid date!';
+	if (typeof data === 'function') return 'Invalid date!';
+	if (data === undefined) return 'Unable to determine the time of year!';
+	if (data === !isNaN(data)) return 'Unable to determine the time of year!';
 
-// let month = data.getMonth();
-
-// if (month > 0 && month <= 3) {
-//    return 'winter';
-// }
-// if (month >= 4 && month <= 6) {
-// 	return 'spring'
-// } 
-// if (month >= 7 && month <= 9){
-//    return 'summer'
-// } 
-// if (month >= 10 && month <=12){
-//    return 'autumn'
-// }
+let month = data.getMonth();
+	console.log(month)
+if (month === 11 || month === 0 ||month === 1) {
+   return 'winter';
+}
+if (month === 2 || month === 3 ||month === 4) {
+	return 'spring'
+}
+if (month === 5 || month === 6 ||month === 7){
+   return 'summer'
+}
+if (month === 8 || month === 9 ||month === 10){
+   return 'autumn'
+}
 }
 
 module.exports = {
