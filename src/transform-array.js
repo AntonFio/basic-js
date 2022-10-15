@@ -17,8 +17,8 @@ const { NotImplementedError } = require('../extensions/index.js');
 	if (arr === null) return "'arr' parameter must be an instance of the Array!";
 	if (arr === undefined) return "'arr' parameter must be an instance of the Array!";
 	if (arr.length === 0) return [];
-	if (Array.isArray(arr) !== 'object') return "'arr' parameter must be an instance of the Array!";
-	if(typeof arr ===  'number' ||typeof arr ===  false) return "'arr' parameter must be an instance of the Array!"
+	// if (Array.isArray(arr) !== 'object') return "'arr' parameter must be an instance of the Array!";
+	// if(typeof arr ===  'number' ||typeof arr ===  false) return "'arr' parameter must be an instance of the Array!"
 	let arr2 =[]
 	for (let i = 0; i < arr.length; i++){
 		if (arr[i] === '--discard-next') {
